@@ -1,0 +1,46 @@
+async function obtenerUsuarios() {
+    try {
+        await usuarios('https://66279b8eb625bf088c08fd8e.mockapi.io/api/usuarios')
+    } catch (error) {
+        console.log('Error al obtener los usuarios:', error)
+    }
+}
+
+async function usuarios(url) {
+    try {
+        const respuesta = await fetch(url)
+        if (!respuesta.ok) {
+            throw new Error('Error en la petición')
+        }
+        const datos = await respuesta.json()
+        console.log(datos)
+    } catch (error) {
+        console.log('Error en la petición:', error)
+    }
+}
+
+obtenerUsuarios();
+
+async function obtenerReportes() {
+    try {
+        await reportes('https://66279b8eb625bf088c08fd8e.mockapi.io/api/reportes')
+    } catch (error) {
+        console.log('Error al obtener los reportes:', error)
+    }
+}
+
+async function reportes(url) {
+    try {
+        const respuesta = await fetch(url)
+        if (!respuesta.ok) {
+            throw new Error("error")
+        }
+        const datos = await respuesta.json()
+        console.log(datos)
+    } catch (error) {
+        console.log(error)
+        return null
+    }
+}
+
+obtenerReportes()
