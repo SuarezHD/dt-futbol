@@ -10,13 +10,20 @@ Escriba un programa que:
 - imprima en consola un mensaje en el formato: {nombre} "{apodo}" {apellido} (notesé las comillas es parte de lo impreso).
 */
 
-let player = {
-    name: 'Luciano',
-    lastName: 'Rodriguez',
-    nickName: 'Lucho'
+let jugador = {
+    nombre: 'Luciano',
+    apellido: 'Rodriguez',
+    apodo: 'Lucho'
 };
 
-console.log(`${jugador.name} "${jugador.lastName}" ${jugador.nickName}`);
+function retornar() {
+
+    return jugador
+}
+
+module.exports = { retornar }
+
+
 
 
 
